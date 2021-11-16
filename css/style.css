@@ -581,7 +581,6 @@ footer a:hover {
 }
 
 .masonry .item {
-  display: inline-block;
   float: left;
 }
 
