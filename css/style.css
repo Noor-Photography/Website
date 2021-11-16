@@ -1136,17 +1136,6 @@ footer a:hover {
   border: none;
 }
 
-.sidebar-heding h2 {
-  font-size: 20px;
-  text-transform: capitalize;
-  color: #fff;
-  margin-top: 40px;
-  letter-spacing: 0.5px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #414141;
-  margin-bottom: 20px;
-}
-
 .archives ul,
 .categories ul {
   margin-top: -5px;
