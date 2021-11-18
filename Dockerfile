@@ -3,6 +3,7 @@ FROM nginx:stable-alpine
 LABEL maintainer="info@arash-hatami.ir"
 
 ARG BUILD_DATE
+ARG PORT
 
 LABEL org.label-schema.schema-version="1.0"
 LABEL org.label-schema.build-date=$BUILD_DATE
@@ -13,6 +14,8 @@ LABEL org.label-schema.vcs-url="https://github.com/Noor-Photography/Website"
 
 COPY . /usr/share/nginx/html
 
-EXPOSE 8080
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 8080;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
+EXPOSE $PORT
+
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
